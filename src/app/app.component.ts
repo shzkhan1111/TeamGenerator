@@ -9,10 +9,16 @@ export class AppComponent {
   title = 'TeamGenerator';
   newListMemberName = "";
   members : string[]= [];
+  errorMessage  = '';
   addMembers(){ 
+      if(!this.newListMemberName){
+        this.errorMessage = 'Name cannot be Empty';
+        return;
+      }
     this.members.push(this.newListMemberName)
     console.log(this.members)
     this.newListMemberName = ''
+    this.errorMessage=''
 
   }
   onInput(m : string){
