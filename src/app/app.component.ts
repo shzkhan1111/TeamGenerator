@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TeamGenerator';
-}
+  newListMemberName = "";
+  members : string[]= [];
+  addMembers(){ 
+    this.members.push(this.newListMemberName)
+    console.log(this.members)
+    this.newListMemberName = ''
+
+  }
+  onInput(m : string){
+    this.newListMemberName = m
+    console.log(m)
+    
+  }
+  }
+

@@ -1,16 +1,28 @@
 <div class="container">
-  <div>
+  <div class="ui card">
     <h1>Team Generator</h1>
     <ul class="list">
-      <li>fkm </li>
+      <li *ngFor="let m of members">
+        {{m}}
+      </li>
     </ul>
     <div class="add-members-container">
-      <input type="text" placeholder="Name" />
-      <button>Add</button>
+      <input
+      #addMemberInput
+       type="text" placeholder="Name"
+      
+      (input) = "onInput(addMemberInput.value)"
+      [value] = "newListMemberName"
+      />
+      <button
+      (click) = "addMembers()" >
+      Add
+    </button>
     </div>
     <div class="input-container">
       <input type="text" placeholder="# of Teams" />
-      <button> Generate </button>
+      <button
+      > Generate </button>
     </div>
   </div>
 </div>
